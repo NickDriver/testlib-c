@@ -12,15 +12,14 @@
 #define MAGENTA "\033[35m"
 #define CYAN "\033[36m"
 
-// This function is a wrapper for the tests
-//  AND NEEDS TO BE IMPLEMENTED IN THE TESTING FILE
-void tests(void);
+typedef struct test {
+    char* description;
+    int result;
+} test;
 
 // This function is used to run the tests
 // it creates a c file, compiles it, runs it and cleans up
-void test_runner(void (*tests)(void));
+void test_runner(test* tests, int num_tests);
 
-// test function
-void test(char* description, int (*test_function)(void));
 
 #endif

@@ -1,32 +1,20 @@
 // This programm is used to run tests
-
 #include <stdio.h>
-// #include <string.h>
-// #include <stdlib.h>
 #include "testlib.h"
 
-// test functions
-// returns 0 if passed, 1 if failed
-int test1(void) {
-    return 0;
-}
+test test1 = {
+    .description = "if pointer is NULL",
+    .result = 5-5
+};
 
-int test2(void) {
-    return 1;
-}
-
-// test runner, takes char* for description and pointer to test functions
-void tests(void) {
-    test("if pointer is NULL", test1);
-    test("if pointer is not null", test2);
-}
+test test2 = {
+    .description = "if pointer is not null",
+    .result = 5-4
+};
 
 // This application creates c file that takes test library, 
 int main(int argc, char *argv[]) {
-    test_runner(tests);
+    test tests[] = {test1, test2};
+    test_runner(tests, 2);
     return 0;
 }
-
-
-
-

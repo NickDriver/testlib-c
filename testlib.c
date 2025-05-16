@@ -12,17 +12,19 @@ int file_exists(const char *filename) {
     return 0;
 }
 
-void test(char* description, int (*test_function)(void)) {
-    printf(YELLOW"TEST:"RESET" %s", description);
-    if (test_function() != 0) {
+void testing(test* test) {
+    printf(YELLOW"TEST:"RESET" %s", test->description);
+    if (test->result != 0) {
         printf(":---:"RED"FAILED"RESET"\n");
     } else {
         printf(":---:"GREEN"PASSED"RESET"\n");
     }
 }
 
-void test_runner(void (*tests)(void)) {
+void test_runner(test* tests, int num_tests) {
     // run tests
-    tests();
+    for (int i = 0; i < num_tests; i++) {
+        testing(&tests[i]);
+    }
 }
 
