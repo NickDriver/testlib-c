@@ -1,3 +1,9 @@
+/*
+ * Static library: testlib
+ * Location: /usr/local/lib
+ * This is a static library for testing purposes
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "testlib.h"

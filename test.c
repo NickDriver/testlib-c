@@ -12,9 +12,9 @@ test test2 = {
     .result = 5-4
 };
 
-// This application creates c file that takes test library, 
 int main(int argc, char *argv[]) {
     test tests[] = {test1, test2};
     test_runner(tests, 2);
     return 0;
 }
+
