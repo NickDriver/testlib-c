@@ -2,18 +2,18 @@
 #include <stdio.h>
 #include "testlib.h"
 
-test test1 = {
+test_t test1 = {
     .description = "if pointer is NULL",
     .result = 5-5
 };
 
-test test2 = {
+test_t test2 = {
     .description = "if pointer is not null",
     .result = 5-4
 };
 
 int main(int argc, char *argv[]) {
-    test tests[] = {test1, test2};
+    test_t tests[] = {test1, test2};
     test_runner(tests, 2);
     return 0;
 }
