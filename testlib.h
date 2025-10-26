@@ -14,6 +14,19 @@
 #define MAGENTA "\033[35m"
 #define CYAN "\033[36m"
 
+// Result suppose to get 0 to PASS, != 0 to FAIL
+/*
+*    Example:
+*    test_t test1 = {
+*        .description = "if pointer is NULL",
+*        .result = 5-5 // 0 to PASS, != 0 to FAIL
+*    };
+*    test_t test2 = {
+*        .description = "if pointer is not null",
+*        .result = 5-4
+*    };
+* Assign to .result the function result, if it's 0, then it's PASS, if it's != 0, then it's FAIL
+*/
 typedef struct test {
     char* description;
     int result;
